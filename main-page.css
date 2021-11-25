@@ -80,6 +80,12 @@ The menu container is in the header and contains only the button
     backdrop-filter: blur(2px);
 }
 
+.menu-icon {
+    width: 2em;
+    height: 2em;
+    background-color: black;
+}
+
 /*---------------Main Content---------------*/
 #main-content {
     position: fixed;

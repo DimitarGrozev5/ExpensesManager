@@ -1,0 +1,8 @@
+/*
+This file contains styling for the different menu item icons
+The icons are dynamicly build as clip-path because reasons
+*/
+
+#menu-categories-add-category-icon {
+    clip-path: polygon();
+}
