@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+
+/*---------------Page level variables---------------*/
+body {
+    --header-heigth: 4em;
+}
+
+/*Cloak of invisibility*/
+.invisible {
+    display: none;
+}
+
+/*---------------Header---------------*/
+#header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: var(--header-heigth);
+
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 0px;
+}
+/*----------Logo----------*/
+#logo {
+    text-align: center;
+    align-self: center;
+    flex-grow: 2;
+
+    border: 1px solid black;
+}
+
+/*----------Menu----------*/
+#menu {
+    text-align: center;
+    flex-grow: 1;
+
+    width: 5em;
+    height: 5em;
+
+    background-color: gray;
+    clip-path: polygon(30% 30%, 70% 30%, 70% 70%, 30% 70%);
+
+    border: 1px solid black;
+}
+
+.menu-subcategory {
+    display: none;
+}
+
+/*---------------Main Content---------------*/
+#main-content {
+    position: fixed;
+    top: var(--header-heigth);
+    left: 0px;
+    right: -400%;
+    bottom: 0px;
+
+    overflow-x: hidden;
+}
+
+.main-content-page {
+    display: inline-block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100%;
+    text-align: center;
+
+    border: 1px solid black;
+}
+
+/*---------------Main Content---------------*/
+#overlays-container {
+    display: flex;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+
+    text-align: center;
+
+    border: 1px solid black;
+    background-color: white;
+}
+
+.overlay {
+    display: none;
+
+    width: 90vw;
+    min-height: 30vh;
+
+    border: 1px solid black;
+}
+
+.overlay.visible {
+    display: block;
+}
