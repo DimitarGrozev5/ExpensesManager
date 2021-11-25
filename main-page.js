@@ -25,7 +25,7 @@ container.addEventListener("touchend", (event) => {
 
 
 //Testing menu animation
-let menu = document.getElementById("menu");
+let menu = document.getElementById("menu-button");
 let keyframes = [
     {clipPath: "polygon(5% 5%, 95% 5%, 95% 95%, 5% 95%, 5% 77%, 95% 77%, 95% 59%, 5% 59%, 5% 41%, 95% 41%, 95% 23%, 5% 23%)"},
     {clipPath: "polygon(5% 23%, 95% 23%, 95% 77%, 5% 77%, 5% 59%, 95% 59%, 95% 59%, 5% 59%, 5% 41%, 95% 41%, 95% 41%, 5% 41%)"},
@@ -34,17 +34,17 @@ let keyframes = [
     {clipPath: "polygon(5% 41%, 95% 41%, 95% 59%, 95% 59%, 95% 59%, 95% 59%, 95% 59%, 59% 59%, 59% 59%, 41% 59%, 41% 59%, 5% 59%)"},
     {clipPath: "polygon(5% 41%, 95% 41%, 95% 41%, 95% 41%, 95% 41%, 95% 41%, 95% 59%, 59% 59%, 59% 59%, 41% 59%, 41% 59%, 5% 59%)"},
     {clipPath: "polygon(5% 41%, 41% 41%, 41% 41%, 59% 41%, 59% 41%, 95% 41%, 95% 59%, 59% 59%, 59% 59%, 41% 59%, 41% 59%, 5% 59%)",
-    transform: "rotate(0deg) scale(0.5)"},
+    transform: "rotate(0deg)"},
     {clipPath: "polygon(5% 41%, 41% 41%, 41% 5%, 59% 5%, 59% 41%, 95% 41%, 95% 59%, 59% 59%, 59% 95%, 41% 95%, 41% 59%, 5% 59%)",
     transform: "rotate(45deg)", offset: 0.5},
     {clipPath: "polygon(5% 41%, 41% 41%, 41% 5%, 59% 5%, 59% 41%, 95% 41%, 95% 59%, 59% 59%, 59% 95%, 41% 95%, 41% 59%, 5% 59%)",
     transform: "rotate(45deg)"},
 ]
 timing = {
-    duration: 1000,
+    duration: 10000,
     iterations: Infinity
 }
-let a = menu.animate(keyframes, timing);
-a.pause();
-// a.currentTime = 9999
+//let a = menu.animate(keyframes, timing);
+//a.pause();
+//a.currentTime = 9999
 });
