@@ -9,7 +9,7 @@ body {
 
 /*Cloak of invisibility*/
 .invisible {
-    display: none;
+    display: none !important;
 }
 
 /*---------------Header---------------*/
@@ -35,12 +35,28 @@ body {
 }
 
 /*----------Menu----------*/
+/*-----Menu container-----*/
+/*
+The menu container is in the header and contains only the button
+*/
 #menu {
-    text-align: center;
-    flex-grow: 1;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 3em;
+    height: 3em;
 
-    width: 5em;
-    height: 5em;
+    text-align: center;
+    align-self: center;
+}
+
+/*-----Menu button-----*/
+#menu-button {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
 
     background-color: gray;
     clip-path: polygon(30% 30%, 70% 30%, 70% 70%, 30% 70%);
@@ -49,7 +65,19 @@ body {
 }
 
 .menu-subcategory {
-    display: none;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    z-index: 10;
+
+    display: grid;
+    grid-template-columns: auto 3em;
+    grid-template-rows: 3em 3em 3em 3em 3em 3em 3em 3em 3em;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
 }
 
 /*---------------Main Content---------------*/
@@ -59,6 +87,7 @@ body {
     left: 0px;
     right: -400%;
     bottom: 0px;
+    z-index: -1;
 
     overflow-x: hidden;
 }
@@ -70,6 +99,8 @@ body {
     top: 0px;
     width: 100vw;
     height: 100%;
+    z-index: -1;
+
     text-align: center;
 
     border: 1px solid black;
