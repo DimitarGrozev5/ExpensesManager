@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses Manager</title>
+
+    <!--
+        Styling the basic page layout
+        Header, Pages and Overlay
+    -->
+    <link rel="stylesheet" href="./main-page.css">
+
+    <!--Importing EventObject "class"-->
+    <script src="./EventObject.js"></script>
+    <!--Importing Swipe Event Object-->
+    <script src="./SwipeEventObject.js"></script>
+    <!--Importing Click Event Object-->
+    <script src="./ClickEventObject.js"></script>
+    <!--Importing Events COntroller Object-->
+    <script src="./EventsControllerObject.js"></script>
+    <!--Putting everything together-->
+    <script src="./main-page.js"></script>
+
+</head>
+<body>
+    <!--The header contains the page title and the menu-->
+    <div id="header">
+        <div id="logo">Expenses Manager</div>
+        <div id="menu">
+            <div id="menu-stats" class="menu-subcategory">
+                Menu stats
+            </div>
+            <div id="menu-categories" class="menu-subcategory">
+                Menu categories
+            </div>
+            <div id="menu-accounts" class="menu-subcategory">
+                Menu accounts
+            </div>
+            <div id="menu-drive" class="menu-subcategory">
+                Menu drive
+            </div>
+        </div>
+    </div>
+    <!--
+        The main content contains the main windows
+        Statistics
+        Categories
+        Accounts
+        Drive
+    -->
+    <div id="main-content">
+        <div id="main-content-stats" class="main-content-page">
+            Statistics
+        </div>
+        <div id="main-content-categories" class="main-content-page">
+            Categories
+        </div>
+        <div id="main-content-accounts" class="main-content-page">
+            Accounts
+        </div>
+        <div id="main-content-drive" class="main-content-page">
+            Drive
+        </div>
+    </div>
+
+    <!--
+        Overlays Cotainer contains the pop up windows
+        They remain hidden most of the time
+    -->
+    <div id="overlays-container">
+        <div id="overlay-add-expense" class="overlay visible">
+            add expense
+        </div>
+        <div id="overlay-correct-account" class="overlay">
+            correct account
+        </div>
+        <div id="overlay-transfer" class="overlay">
+            transfer
+        </div>
+        <div id="overlay-balance" class="overlay">
+            balance
+        </div>
+        <div id="overlay-top-up" class="overlay">
+            top up
+        </div>
+    </div>
+</body>
+</html>
