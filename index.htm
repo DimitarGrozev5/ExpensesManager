@@ -16,6 +16,8 @@
     <!--Test style for menu deployment animation endpoint-->
     <link rel="stylesheet" href="./test.css">
 
+    <!--Importing MenuGenerator "class"-->
+    <script src="./MenuController.js"></script>
     <!--Importing EventObject "class"-->
     <script src="./EventObject.js"></script>
     <!--Importing Swipe Event Object-->
@@ -33,15 +35,16 @@
     <div id="header">
         <div id="logo">Expenses Manager</div>
         <div id="menu">
+            <div id="menu-toggle-row" class="menu-row">
+                <div id="menu-categories-toggle-menu-label" class="menu-label">Close Menu</div>
+                <div id="menu-categories-toggle-menu-icon" class="menu-icon"></div>
+            </div>
+            <div id="menu-divider-1" class="menu-divider"></div>
+            
             <div id="menu-stats" class="menu-subcategory invisible">
                 Menu stats
             </div>
             <div id="menu-categories" class="menu-subcategory">
-                <div id="menu-categories-toggle-menu-row" class="menu-row">
-                    <div id="menu-categories-toggle-menu-label" class="menu-label">Close Menu</div>
-                    <div id="menu-categories-toggle-menu-icon" class="menu-icon"></div>
-                </div>
-                
                 <div id="menu-categories-add-category-row" class="menu-row">
                     <div id="menu-categories-add-category-label" class="menu-label">Add Category</div>
                     <div id="menu-categories-add-category-icon" class="menu-icon"></div>
@@ -64,7 +67,7 @@
                     <div id="menu-categories-top-up-categories-icon" class="menu-icon"></div>
                 </div>
 
-                <div id="menu-categories-divider-2" class="menu-divider"></div>
+                <div id="menu-categories-divider-3" class="menu-divider"></div>
 
                 <div id="menu-categories-logout-row" class="menu-row">
                     <div id="menu-categories-logout-label" class="menu-label">Logout</div>

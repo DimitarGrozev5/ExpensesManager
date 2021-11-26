@@ -19,19 +19,14 @@ body {
     left: 0px;
     right: 0px;
     height: var(--header-heigth);
-
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: stretch;
-    gap: 0px;
 }
 /*----------Logo----------*/
 #logo {
-    text-align: center;
-    align-self: center;
-    flex-grow: 2;
+    position: relative;
+    left: 0em;
+    right: 4em;
 
-    border: 1px solid black;
+    text-align: center;
 }
 
 /*----------Menu----------*/
@@ -40,17 +35,6 @@ body {
 The menu container is in the header and contains only the button
 */
 #menu {
-    position: relative;
-    left: 0px;
-    top: 0px;
-    width: 4em;
-    height: 4em;
-
-    text-align: center;
-    align-self: center;
-}
-
-.menu-subcategory {
     position: fixed;
     right: 0px;
     top: 0px;
@@ -60,22 +44,27 @@ The menu container is in the header and contains only the button
 
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(2px);
+
+    text-align: center;
+    align-self: center;
 }
 
 .menu-row {
-    position: fixed;
-    top: 0em;
+    position: absolute;
     left: 0em;
     right: 0em;
     height: 4em;
+
+    text-align: right;
 }
 
 .menu-label {
+    display: inline-block;
+
     position: relative;
-    right: 0em;
-    top: 0em;
-    /* width: 0em;
-    height: 0em; */
+    right: 1em;
+    top: 0.25em;
+    min-width: 3em;
 
     font-size: 1.5em;
     text-align: right;
@@ -85,11 +74,13 @@ The menu container is in the header and contains only the button
 }
 
 .menu-icon {
+    display: inline-block;
+    
     position: relative;
-    right: 0em;
-    top: 0em;
-    /* width: 3em;
-    height: 3em; */
+    right: 1em;
+    top: 1em;
+    width: 2em;
+    height: 2em;
     background-color: white;
     opacity: 1;
 }
@@ -97,9 +88,13 @@ The menu container is in the header and contains only the button
 .menu-divider {
     position: fixed;
     right: 0.5em;
-    top: 0.5em;
-    width: 2em;
-    height: 2em;
+    left: 0.5em;
+    height: 0em;
+    border-bottom: 1px dashed white;
+}
+
+#menu-divider-1 {
+    top: 4em;
 }
 
 /*---------------Main Content---------------*/

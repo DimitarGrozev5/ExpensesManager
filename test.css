@@ -1,6 +1,9 @@
 #menu-categories-toggle-menu-row {
 	top: 0em;
 }
+#menu-categories-divider-1 {
+    top: 4em;
+}
 #menu-categories-add-category-row {
 	top: 4em;
 }
@@ -10,8 +13,14 @@
 #menu-categories-sort-categories-row {
 	top: 12em;
 }
+#menu-categories-divider-2 {
+    top: 16em;
+}
 #menu-categories-top-up-categories-row {
 	top: 16em;
+}
+#menu-categories-divider-3 {
+    top: 20em;
 }
 #menu-categories-logout-row {
 	top: 20em;

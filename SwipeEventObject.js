@@ -162,7 +162,7 @@ let SwipeEventObject = (eventsController) => {
 
     //Starting animations
     let animations = animationHelperObject();
-    mainContentPages.forEach(page => page.animate(keyframes, timing));
+    mainContentPages.forEach(page => page.animate(keyframes, timing));//?????? What is this
     for (let i = 0; i < mainContentPages.length; i++) {
         animations.add(mainContentPages[i].animate(keyframes[i], timing));
     }
@@ -237,31 +237,6 @@ let SwipeEventObject = (eventsController) => {
         } else {
             tickDown();
         }
-
-        /*setTimeout(
-            () => {
-                if (dt > 0) {
-                    animations.reverse();
-                }
-                animations.pause();
-                animations.currentTime = currentPage.timing;
-            },
-            Math.abs(dt)
-        )*/
-        
-        /*await new Promise(resolve => setTimeout(
-            () => {
-                animations.pause();
-                resolve();
-            },
-            Math.abs(dt)
-        ));
-
-        if (dt > 0) {
-            animations.reverse();
-            animations.pause();
-        }
-        animations.currentTime = currentPage.timing;*/
     }
 
     let changeCurrentPage = () => {
