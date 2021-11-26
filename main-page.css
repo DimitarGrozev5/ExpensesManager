@@ -62,28 +62,36 @@ The menu container is in the header and contains only the button
     backdrop-filter: blur(2px);
 }
 
-.menu-label {
+.menu-row {
     position: fixed;
-    right: 4em;
-    top: 0.75em;
-    width: 10em;
-    height: 3em;
+    top: 0em;
+    left: 0em;
+    right: 0em;
+    height: 4em;
+}
+
+.menu-label {
+    position: relative;
+    right: 0em;
+    top: 0em;
+    /* width: 0em;
+    height: 0em; */
 
     font-size: 1.5em;
     text-align: right;
     color: white;
 
-    opacity: 0;
+    opacity: 1;
 }
 
 .menu-icon {
-    position: fixed;
-    right: 0.5em;
-    top: 0.5em;
-    width: 3em;
-    height: 3em;
+    position: relative;
+    right: 0em;
+    top: 0em;
+    /* width: 3em;
+    height: 3em; */
     background-color: white;
-    opacity: 0;
+    opacity: 1;
 }
 
 .menu-divider {

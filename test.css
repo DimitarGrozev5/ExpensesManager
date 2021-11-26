@@ -1,4 +1,23 @@
-#menu-categories-toggle-menu-label {
+#menu-categories-toggle-menu-row {
+	top: 0em;
+}
+#menu-categories-add-category-row {
+	top: 4em;
+}
+#menu-categories-delete-category-row {
+	top: 8em;
+}
+#menu-categories-sort-categories-row {
+	top: 12em;
+}
+#menu-categories-top-up-categories-row {
+	top: 16em;
+}
+#menu-categories-logout-row {
+	top: 20em;
+}
+
+/* #menu-categories-toggle-menu-label {
     right: 3em;
     opacity: 1;
 }
@@ -24,4 +43,4 @@
 #menu-categories-remove-category-icon {
     top: 8em;
     opacity: 1;
-}
+} */
