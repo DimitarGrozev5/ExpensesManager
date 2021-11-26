@@ -43,47 +43,55 @@ The menu container is in the header and contains only the button
     position: relative;
     left: 0px;
     top: 0px;
-    width: 3em;
-    height: 3em;
+    width: 4em;
+    height: 4em;
 
     text-align: center;
     align-self: center;
 }
 
-/*-----Menu button-----*/
-#menu-button {
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
-
-    background-color: gray;
-    clip-path: polygon(30% 30%, 70% 30%, 70% 70%, 30% 70%);
-
-    border: 1px solid black;
-}
-
 .menu-subcategory {
     position: fixed;
-    left: 0px;
     right: 0px;
     top: 0px;
+    left: 0px;
     bottom: 0px;
     z-index: 10;
 
-    display: grid;
-    grid-template-columns: auto 3em;
-    grid-template-rows: 3em 3em 3em 3em 3em 3em 3em 3em 3em;
-
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(2px);
 }
 
+.menu-label {
+    position: fixed;
+    right: 4em;
+    top: 0.75em;
+    width: 10em;
+    height: 3em;
+
+    font-size: 1.5em;
+    text-align: right;
+    color: white;
+
+    opacity: 0;
+}
+
 .menu-icon {
+    position: fixed;
+    right: 0.5em;
+    top: 0.5em;
+    width: 3em;
+    height: 3em;
+    background-color: white;
+    opacity: 0;
+}
+
+.menu-divider {
+    position: fixed;
+    right: 0.5em;
+    top: 0.5em;
     width: 2em;
     height: 2em;
-    background-color: black;
 }
 
 /*---------------Main Content---------------*/

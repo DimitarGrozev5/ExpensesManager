@@ -1,0 +1,27 @@
+#menu-categories-toggle-menu-label {
+    right: 3em;
+    opacity: 1;
+}
+#menu-categories-toggle-menu-icon {
+    opacity: 1;
+}
+
+#menu-categories-add-category-label {
+    top: 3.75em;
+    right: 3em;
+    opacity: 1;
+}
+#menu-categories-add-category-icon {
+    top: 3.5em;
+    opacity: 1;
+}
+
+#menu-categories-remove-category-label {
+    top: 6.75em;
+    right: 3em;
+    opacity: 1;
+}
+#menu-categories-remove-category-icon {
+    top: 8em;
+    opacity: 1;
+}
