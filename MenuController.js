@@ -16,8 +16,8 @@ let MenuControllerObject = () => {
 
     //Referencing the Toggle button and label
     let toggleElements = [
-        document.getElementById("menu-categories-toggle-menu-label"),
-        document.getElementById("menu-categories-toggle-menu-icon"),
+        document.getElementById("menu-toggle-label"),
+        document.getElementById("menu-toggle-icon"),
         document.getElementById("menu")
     ]
 
@@ -56,8 +56,8 @@ let MenuControllerObject = () => {
             {opacity: 1, right: "1em"}
         ],
         [
-            {opacity: 1},
-            {opacity: 1}
+            {opacity: 0, backgroundColor: "black"},
+            {opacity: 1, backgroundColor: "white"}
         ],
         [//Delete Category Row
             {opacity: 0, top: 0},
@@ -70,8 +70,8 @@ let MenuControllerObject = () => {
             {opacity: 1, right: "1em"}
         ],
         [
-            {opacity: 1},
-            {opacity: 1}
+            {opacity: 0, backgroundColor: "black"},
+            {opacity: 1, backgroundColor: "white"}
         ],
         [//Sort Categories Row
             {opacity: 0, top: 0},
@@ -84,8 +84,8 @@ let MenuControllerObject = () => {
             {opacity: 1, right: "1em"}
         ],
         [
-            {opacity: 1},
-            {opacity: 1}
+            {opacity: 0, backgroundColor: "black"},
+            {opacity: 1, backgroundColor: "white"}
         ],
         [//Divider 2
             {opacity: 0, top: "16em", right: "0em", left: "100vw"},
@@ -103,8 +103,8 @@ let MenuControllerObject = () => {
             {opacity: 1, right: "1em"}
         ],
         [
-            {opacity: 1},
-            {opacity: 1}
+            {opacity: 0, backgroundColor: "black"},
+            {opacity: 1, backgroundColor: "white"}
         ],
         [//Divder 3
             {opacity: 0, top: "20em", right: "0em", left: "100vw"},
@@ -122,8 +122,8 @@ let MenuControllerObject = () => {
             {opacity: 1, right: "1em"}
         ],
         [
-            {opacity: 1},
-            {opacity: 1}
+            {opacity: 0, backgroundColor: "black"},
+            {opacity: 1, backgroundColor: "white"}
         ]
     ];
 
@@ -157,7 +157,7 @@ let MenuControllerObject = () => {
     ];
 
     //Setting up timing
-    const ANIMATIONDURATION = 5000;
+    const ANIMATIONDURATION = 500;
     let timing = {
         duration: ANIMATIONDURATION,
         iterations: 1
@@ -199,6 +199,7 @@ let MenuControllerObject = () => {
     universalAnimations.add(toggleElements[1].animate(keyframesToggle[1], timing));
     universalAnimations.add(toggleElements[2].animate(keyframesToggle[2], timing));
 
+    universalAnimations.reverse();
     universalAnimations.pause();
 
     //Starting Page specific animations
@@ -214,14 +215,20 @@ let MenuControllerObject = () => {
         for (let j = 0; j < menus[i].length; j++) {
             pageMenuAnimations[i].add(menus[i][j].animate(keyframes[i][j], timing));
         }
+        pageMenuAnimations[i].reverse();
         pageMenuAnimations[i].pause();
     }
 
     return {
-        resolve: function (targetPageMenu) {
-            toggleElements[2].classList.toggle("end");
-            universalAnimations.reverse();
-            pageMenuAnimations[targetPageMenu].reverse();
+        toggle: function (targetPageMenu) {
+            return function () {
+                universalAnimations.reverse();
+                pageMenuAnimations[targetPageMenu].reverse();
+                setTimeout(() => {
+                    toggleElements[2].classList.toggle("end");
+                }, ANIMATIONDURATION * 2 / 3);
+                
+            }
         }
     }
 }

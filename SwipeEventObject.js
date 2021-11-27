@@ -22,6 +22,7 @@ let SwipeEventObject = (eventsController) => {
         document.getElementById("menu-accounts").classList,
         document.getElementById("menu-drive").classList,
     ];
+    let menuParent = document.getElementById("menu");
 
     //Setting up keyframes
     let keyframes = [
@@ -251,6 +252,7 @@ let SwipeEventObject = (eventsController) => {
         mainContentMenus[currentPage.page].toggle("invisible");
 
         currentPage.changeTo = target;
+        menuParent.dataset.page = target;
 
         //Toggle Menu visibility
         mainContentMenus[currentPage.page].toggle("invisible");

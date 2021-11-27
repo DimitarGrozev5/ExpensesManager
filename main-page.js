@@ -23,7 +23,22 @@ container.addEventListener("touchend", (event) => {
     clickController.resolve();
 });
 
-//MenuControllerObject();
+
+//Setting up a click controller for the menu button
+let menuController = MenuControllerObject();
+let menuButton = document.getElementById("menu-toggle-row");
+let menuClickController = ClickEventObject(eventsController, menuController.toggle(document.getElementById("menu").dataset.page));
+eventsController.register.click = menuClickController;
+menuButton.addEventListener("touchstart", (event) => {
+    console.log("test")
+    menuClickController.startEvent(event.touches[0].clientX, event.touches[0].clientY);
+});
+menuButton.addEventListener("touchmove", (event) => {
+    menuClickController.updateEvent(event.touches[0].clientX, event.touches[0].clientY);
+});
+menuButton.addEventListener("touchend", (event) => {
+    menuClickController.resolve();
+});
 
 
 //Testing menu animation
