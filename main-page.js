@@ -23,7 +23,7 @@ container.addEventListener("touchend", (event) => {
     clickController.resolve();
 });
 
-MenuControllerObject();
+//MenuControllerObject();
 
 
 //Testing menu animation

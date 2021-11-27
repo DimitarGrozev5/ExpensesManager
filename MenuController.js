@@ -14,6 +14,13 @@ let MenuControllerObject = () => {
     let menus = [];
     let keyframes = [];
 
+    //Referencing the Toggle button and label
+    let toggleElements = [
+        document.getElementById("menu-categories-toggle-menu-label"),
+        document.getElementById("menu-categories-toggle-menu-icon"),
+        document.getElementById("menu")
+    ]
+
     //Referencing the DOM Elements of Submenu Categories
     menus[1] = [
         document.getElementById("menu-categories-add-category-row"),
@@ -120,8 +127,37 @@ let MenuControllerObject = () => {
         ]
     ];
 
+    //Keyframes for the Toggle button
+    let keyframesToggle = [
+        [
+            {opacity: 0, right: "-1em"},
+            {opacity: 0, right: "-1em", offset: 0.75},
+            {opacity: 1, right: "1em"}
+        ],
+        [
+            {clipPath: "polygon(5% 5%, 95% 5%, 95% 95%, 5% 95%, 5% 77%, 95% 77%, 95% 59%, 5% 59%, 5% 41%, 95% 41%, 95% 23%, 5% 23%)",
+            transform: "rotate(0deg)", backgroundColor: "gray"},
+            {clipPath: "polygon(5% 23%, 95% 23%, 95% 77%, 5% 77%, 5% 59%, 95% 59%, 95% 59%, 5% 59%, 5% 41%, 95% 41%, 95% 41%, 5% 41%)"},
+            {clipPath: "polygon(5% 23%, 95% 23%, 95% 77%, 5% 77%, 5% 59%, 5% 59%, 5% 59%, 5% 59%, 5% 41%, 5% 41%, 5% 41%, 5% 41%)"},
+            {clipPath: "polygon(5% 41%, 95% 41%, 95% 59%, 5% 59%, 5% 59%, 5% 59%, 5% 59%, 5% 59%, 5% 59%, 5% 59%, 5% 59%, 5% 59%)"},
+            {clipPath: "polygon(5% 41%, 95% 41%, 95% 59%, 95% 59%, 95% 59%, 95% 59%, 95% 59%, 59% 59%, 59% 59%, 41% 59%, 41% 59%, 5% 59%)"},
+            {clipPath: "polygon(5% 41%, 95% 41%, 95% 41%, 95% 41%, 95% 41%, 95% 41%, 95% 59%, 59% 59%, 59% 59%, 41% 59%, 41% 59%, 5% 59%)"},
+            {clipPath: "polygon(5% 41%, 41% 41%, 41% 41%, 59% 41%, 59% 41%, 95% 41%, 95% 59%, 59% 59%, 59% 59%, 41% 59%, 41% 59%, 5% 59%)",
+            transform: "rotate(0deg)"},
+            {clipPath: "polygon(5% 41%, 41% 41%, 41% 5%, 59% 5%, 59% 41%, 95% 41%, 95% 59%, 59% 59%, 59% 95%, 41% 95%, 41% 59%, 5% 59%)",
+            transform: "rotate(45deg)"},
+            {clipPath: "polygon(5% 41%, 41% 41%, 41% 5%, 59% 5%, 59% 41%, 95% 41%, 95% 59%, 59% 59%, 59% 95%, 41% 95%, 41% 59%, 5% 59%)",
+            transform: "rotate(45deg)", backgroundColor: "white"},
+        ],
+        [
+            {width: "4em", height: "4em", backgroundColor: "rgba(0, 0, 0, 0)"},
+            {width: "100vw", height: "100vh", backgroundColor: "rgba(0, 0, 0, 0)", offset: 0.01},
+            {width: "100vw", height: "100vh", backgroundColor: "rgba(0, 0, 0, 0.4)"}
+        ]
+    ];
+
     //Setting up timing
-    const ANIMATIONDURATION = 500;
+    const ANIMATIONDURATION = 5000;
     let timing = {
         duration: ANIMATIONDURATION,
         iterations: 1
@@ -156,11 +192,36 @@ let MenuControllerObject = () => {
         }
     }
 
-    //Starting animations
-    let animations = animationHelperObject();
-    for (let i = 0; i < menus[1].length; i++) {
-        console.log(menus[1][i].id)
-        animations.add(menus[1][i].animate(keyframes[1][i], timing));
+    //Starting animations that play every time
+    let universalAnimations = animationHelperObject();
+    
+    universalAnimations.add(toggleElements[0].animate(keyframesToggle[0], timing));
+    universalAnimations.add(toggleElements[1].animate(keyframesToggle[1], timing));
+    universalAnimations.add(toggleElements[2].animate(keyframesToggle[2], timing));
+
+    universalAnimations.pause();
+
+    //Starting Page specific animations
+    let pageMenuAnimations = [
+        animationHelperObject(),
+        animationHelperObject(),
+        animationHelperObject(),
+        animationHelperObject()
+    ];
+
+    /*for (let i = 0; i < menus.length; i++) {*/
+    for (let i = 1; i < 2; i++) {
+        for (let j = 0; j < menus[i].length; j++) {
+            pageMenuAnimations[i].add(menus[i][j].animate(keyframes[i][j], timing));
+        }
+        pageMenuAnimations[i].pause();
     }
-    //animations.reverse();
+
+    return {
+        resolve: function (targetPageMenu) {
+            toggleElements[2].classList.toggle("end");
+            universalAnimations.reverse();
+            pageMenuAnimations[targetPageMenu].reverse();
+        }
+    }
 }
