@@ -8,23 +8,26 @@
     
     <link rel="stylesheet" href="./login.css">
 
+    <script src="./login.js"></script>
+
 </head>
 <body>
     <div id="header">Expenses Manager</div>
-    <div id="login">
-        <div id="login-header">Login</div>
-        <div id="login-email-container" class="input-container error">
-            <div id="login-email-label">E-Mail:</div>
-            <input type="text" name="login-email" id="login-email-input">
-            <div id="login-email-error-msg" class="error-msg">Please enter a vaild email</div>
+    <div id="container">
+        <div id="login">
+            <div id="login-header">Login</div>
+            <div id="login-email-container" class="input-container error">
+                <div id="login-email-label">E-Mail:</div>
+                <input type="text" name="login-email" id="login-email-input">
+                <div id="login-email-error-msg" class="error-msg">Please enter a vaild email</div>
+            </div>
+            <div id="login-pass-container" class="input-container">
+                <div id="login-pass-label">Password:</div>
+                <input type="password" name="login-pass" id="login-pass-input">
+                <div id="login-pass-error-msg" class="error-msg">The password is incorrect</div>
+            </div>
+            <input type="button" value="Login">
         </div>
-        <div id="login-pass-container" class="input-container">
-            <div id="login-pass-label">Password:</div>
-            <input type="password" name="login-pass" id="login-pass-input">
-            <div id="login-pass-error-msg" class="error-msg">The password is incorrect</div>
-        </div>
-        <input type="button" value="Login">
-
         <div id="register" class="link">
             <div id="register-header">Register</div>
             <div id="register-name-container" class="input-container">
