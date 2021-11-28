@@ -2,3 +2,133 @@
     box-sizing: border-box;
 }
 
+body {
+    text-align: right;
+}
+
+/*---------------Formating the header---------------*/
+#header {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    height: 4em;
+}
+
+/*---------------Formating the login page and inputs---------------*/
+#login {
+    position: fixed;
+    left: 2em;
+    right: 2em;
+    top: 4em;
+    bottom: 0px;
+}
+
+#login-header {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    text-align: left;
+}
+
+.input-container {
+    margin-bottom: 0.5em;
+    text-align: left;
+}
+
+.input-container .error-msg {
+    display: none;
+}
+
+.input-container.error .error-msg {
+    display: block;
+    color: red;
+}
+
+.input-container.error input[type="text"], .input-container.error input[type="password"] {
+    border: 1px solid red;
+}
+
+
+input[type="text"], input[type="password"] {
+    height: 2.5em;
+    border: 1px solid black;
+    width: 100%;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    outline: none;
+}
+
+input[type="button"] {
+    border: 1px solid black;
+    background-color: white;
+    padding: 0.7em;
+}
+
+/*---------------Formating the Register page---------------*/
+#register {
+    position: fixed;
+    left: 2em;
+    right: 2em;
+    top: 4em;
+    bottom: 0px;
+    
+    text-decoration: none;
+
+    background-color: white;
+
+}
+
+#register #register-header {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    text-align: left;
+}
+
+#register.link {
+    position: static;
+    margin-top: 1em;
+    height: 1em;
+    overflow: hidden;
+    text-decoration: underline;
+}
+
+#register.link #register-header {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    text-align: right;
+}
+
+/*---------------Formating the Forgot page---------------*/
+#forgot {
+    position: fixed;
+    left: 2em;
+    right: 2em;
+    top: 4em;
+    bottom: 0px;
+    
+    text-decoration: none;
+
+    background-color: white;
+
+}
+
+#forgot #forgot-header {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    text-align: left;
+}
+
+#forgot.link {
+    position: static;
+    margin-top: 0.5em;
+    height: 1em;
+    overflow: hidden;
+    text-decoration: underline;
+}
+
+#forgot.link #forgot-header {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    text-align: right;
+}

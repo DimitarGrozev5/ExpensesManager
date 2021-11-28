@@ -5,49 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    
+    <link rel="stylesheet" href="./login.css">
+
 </head>
 <body>
+    <div id="header">Expenses Manager</div>
     <div id="login">
         <div id="login-header">Login</div>
-        <form action="./php/login.php" method="post">
-            <div id="login-email-container">
-                <div id="login-email-label">E-Mail:</div>
-                <input type="text" name="login-email" id="login-email-input">
-            </div>
-            <div id="login-pass-container">
-                <div id="login-pass-label">Password:</div>
-                <input type="password" name="login-pass" id="login-pass-input">
-            </div>
-            <input type="button" value="Login">
+        <div id="login-email-container" class="input-container error">
+            <div id="login-email-label">E-Mail:</div>
+            <input type="text" name="login-email" id="login-email-input">
+            <div id="login-email-error-msg" class="error-msg">Please enter a vaild email</div>
+        </div>
+        <div id="login-pass-container" class="input-container">
+            <div id="login-pass-label">Password:</div>
+            <input type="password" name="login-pass" id="login-pass-input">
+            <div id="login-pass-error-msg" class="error-msg">The password is incorrect</div>
+        </div>
+        <input type="button" value="Login">
 
-            <div id="register">
-                <div id="register-header">Register</div>
-                <div id="register-name-container">
-                    <div id="register-name-label">Name:</div>
-                    <input type="text" name="register-name" id="register-name-input">
-                </div>
-                    <div id="register-email-label">E-Mail:</div>
-                    <input type="text" name="register-email" id="register-email-input">
-                </div>
-                <div id="register-pass-1-container">
-                    <div id="register-pass-1-label">Enter Password:</div>
-                    <input type="text" name="register-pass-1" id="register-pass-1-input">
-                </div>
-                <div id="register-pass-2-container">
-                    <div id="register-pass-2-label">Enter Password again:</div>
-                    <input type="text" name="register-pass-2" id="register-pass-2-input">
-                </div>
-                <input type="button" value="Register">
+        <div id="register" class="link">
+            <div id="register-header">Register</div>
+            <div id="register-name-container" class="input-container">
+                <div id="register-name-label">Name:</div>
+                <input type="text" name="register-name" id="register-name-input">
+                <div id="register-name-error-msg" class="error-msg">Name must be at least one letter</div>
             </div>
+            <div id="register-email-container" class="input-container">
+                <div id="register-email-label">E-Mail:</div>
+                <input type="text" name="register-email" id="register-email-input">
+                <div id="register-email-error-msg" class="error-msg">Please enter a vaild email</div>
+            </div>
+            <div id="register-pass-1-container" class="input-container">
+                <div id="register-pass-1-label">Enter Password:</div>
+                <input type="text" name="register-pass-1" id="register-pass-1-input">
+                <div id="register-pass-1-error-msg" class="error-msg">Password must be at least six characters</div>
+            </div>
+            <div id="register-pass-2-container" class="input-container">
+                <div id="register-pass-2-label">Enter Password again:</div>
+                <input type="text" name="register-pass-2" id="register-pass-2-input">
+                <div id="register-pass-2-error-msg" class="error-msg">Passwords don't match</div>
+            </div>
+            <input type="button" value="Register">
+        </div>
 
-            <div id="forgot">
-                <div id="forgot-header">Forgot password</div>
-                    <div id="forgot-email-label">E-Mail:</div>
-                    <input type="text" name="forgot-email" id="forgot-email-input">
-                </div>
-                <input type="button" value="Request new password">
+        <div id="forgot" class="link">
+            <div id="forgot-header">Forgot password</div>
+            <div id="forgot-email-container" class="input-container">
+                <div id="forgot-email-label">E-Mail:</div>
+                <input type="text" name="forgot-email" id="forgot-email-input">
+                <div id="forgot-email-error-msg" class="error-msg">Please enter a vaild email</div>
             </div>
-        </form>
+            <input type="button" value="Request new password">
+        </div>
     </div>
 </body>
 </html>
