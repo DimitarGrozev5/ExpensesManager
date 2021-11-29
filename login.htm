@@ -16,7 +16,7 @@
     <div id="container">
         <div id="login">
             <div id="login-header">Login</div>
-            <div id="login-email-container" class="input-container error">
+            <div id="login-email-container" class="input-container">
                 <div id="login-email-label">E-Mail:</div>
                 <input type="text" name="login-email" id="login-email-input">
                 <div id="login-email-error-msg" class="error-msg">Please enter a vaild email</div>
@@ -26,7 +26,7 @@
                 <input type="password" name="login-pass" id="login-pass-input">
                 <div id="login-pass-error-msg" class="error-msg">The password is incorrect</div>
             </div>
-            <input type="button" value="Login">
+            <input type="button" id="login-submit" value="Login">
         </div>
         <div id="register" class="link">
             <div id="register-header">Register</div>
@@ -42,15 +42,15 @@
             </div>
             <div id="register-pass-1-container" class="input-container">
                 <div id="register-pass-1-label">Enter Password:</div>
-                <input type="text" name="register-pass-1" id="register-pass-1-input">
+                <input type="password" name="register-pass-1" id="register-pass-1-input">
                 <div id="register-pass-1-error-msg" class="error-msg">Password must be at least six characters</div>
             </div>
             <div id="register-pass-2-container" class="input-container">
                 <div id="register-pass-2-label">Enter Password again:</div>
-                <input type="text" name="register-pass-2" id="register-pass-2-input">
+                <input type="password" name="register-pass-2" id="register-pass-2-input">
                 <div id="register-pass-2-error-msg" class="error-msg">Passwords don't match</div>
             </div>
-            <input type="button" value="Register">
+            <input type="button" id="register-submit" value="Register">
         </div>
 
         <div id="forgot" class="link">
@@ -60,7 +60,7 @@
                 <input type="text" name="forgot-email" id="forgot-email-input">
                 <div id="forgot-email-error-msg" class="error-msg">Please enter a vaild email</div>
             </div>
-            <input type="button" value="Request new password">
+            <input type="button" id="forgot-submit" value="Request new password">
         </div>
     </div>
 </body>

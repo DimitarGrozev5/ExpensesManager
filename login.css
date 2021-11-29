@@ -37,6 +37,10 @@
     margin-bottom: 0.5em;
 }
 
+.input-container.error {
+    color: red;
+}
+
 .input-container .error-msg {
     display: none;
 }
@@ -48,6 +52,7 @@
 
 .input-container.error input[type="text"], .input-container.error input[type="password"] {
     border: 1px solid red;
+    color: red;
 }
 
 

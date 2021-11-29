@@ -1,6 +1,81 @@
 window.onload = () => {
     /*--------------------Data validation--------------------*/
+    /*-----Test functions-----*/
+    let checkEMail = email => /\S+@\S+\.\S+/.test(email);
+    let checkName = name => /.+/.test(name);
+    let checkPass = pass => pass.length >= 6;
+    let checkPass2 = (pass1, pass2) => pass1 === pass2;
+
+    /*-----References to input fields-----*/
+    let loginEMail = document.getElementById("login-email-input");
+    let loginPass = document.getElementById("login-pass-input");
+    let loginSubmit = document.getElementById("login-submit");
     
+    let registerName = document.getElementById("register-name-input");
+    let registerEMail = document.getElementById("register-email-input");
+    let registerPass1 = document.getElementById("register-pass-1-input");
+    let registerPass2 = document.getElementById("register-pass-2-input");
+    let registerSubmit = document.getElementById("register-submit");
+    
+    let forgotEMail = document.getElementById("forgot-email-input");
+    let forgotSubmit = document.getElementById("forgot-submit");
+
+    /*-----Setting up event listeners focus event-----*/
+    let removeErrorClassOnFocus = (event) => event.target.parentElement.classList.remove("error");
+    
+    loginEMail.addEventListener("focus", removeErrorClassOnFocus);
+    loginPass.addEventListener("focus", removeErrorClassOnFocus);
+    
+    registerName.addEventListener("focus", removeErrorClassOnFocus);
+    registerEMail.addEventListener("focus", removeErrorClassOnFocus);
+    registerPass1.addEventListener("focus", (event) => {
+        removeErrorClassOnFocus(event);
+        if (registerPass2.parentElement.classList.contains("error")) {
+            registerPass2.value = '';
+            removeErrorClassOnFocus({target: registerPass2});
+        }
+    });
+    registerPass2.addEventListener("focus", removeErrorClassOnFocus);
+    
+    forgotEMail.addEventListener("focus", removeErrorClassOnFocus);
+
+    /*-----Setting up event listeners blur event-----*/
+    loginEMail.addEventListener("blur", (event) => {
+        if (!checkEMail(event.target.value)) {
+            event.target.parentElement.classList.add("error");
+        }
+    });
+    //Login password doesn't require validation
+    /*loginPass.addEventListener("blur", (event) => {
+        
+    });*/
+    
+    registerName.addEventListener("blur", (event) => {
+        if (!checkName(event.target.value)) {
+            event.target.parentElement.classList.add("error");
+        }
+    });
+    registerEMail.addEventListener("blur", (event) => {
+        if (!checkEMail(event.target.value)) {
+            event.target.parentElement.classList.add("error");
+        }
+    });
+    registerPass1.addEventListener("blur", (event) => {
+        if (!checkPass(event.target.value)) {
+            event.target.parentElement.classList.add("error");
+        }
+    });
+    registerPass2.addEventListener("blur", (event) => {
+        if (!checkPass2(event.target.value, registerPass1.value)) {
+            event.target.parentElement.classList.add("error");
+        }
+    });
+    
+    forgotEMail.addEventListener("blur", (event) => {
+        if (!checkEMail(event.target.value)) {
+            event.target.parentElement.classList.add("error");
+        }
+    });
 
     /*--------------------Setting up Register animation--------------------*/
     let register = document.getElementById("register");
