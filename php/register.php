@@ -44,6 +44,6 @@ $stmt->bindValue(':token_expiration', $tokenExpirationDate, SQLITE3_INTEGER);
 
 $result = $stmt->execute();
 
-echo "ok" . $result->fetchArray();
+echo "ok";
 
 ?>
