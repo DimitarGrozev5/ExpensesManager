@@ -176,10 +176,72 @@ The menu container is in the header and contains only the button
 
     text-align: center;
 
+    padding: 2em;
+}
+
+/*----------Category breakdowns----------*/
+/*-----Box-----*/
+.category-brakedown {
     border: 1px solid black;
 }
 
-/*---------------Main Content---------------*/
+/*-----Category header-----*/
+.category-breakdown-header {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 0.3em;
+}
+.category-breakdown-name {
+    font-size: 1.5em;
+}
+.category-breakdown-add-btn {
+    width: 1.5em;
+    height: 1.5em;
+    border: 1px solid black;
+}
+/*-----Category limits-----*/
+.category-brakedown-limits {
+    padding: 0.5em;
+}
+.category-brakedown-limits > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.category-brakedown-limits-limit {
+    border: 1px solid green;
+    border-bottom: 0px;
+    background-color: rgb(200, 255, 200);
+    color: green;
+    /*min-width will be changed by JS to match the amount*/
+    min-width: 100%;
+}
+.category-brakedown-limits-overspent {
+    border: 1px solid red;
+    background-color: rgb(255, 153, 153);
+    color: red;
+    /*min-width will be changed by JS to match the amount*/
+    min-width: 100%;
+    display: none;
+}
+.category-brakedown-limits-spent {
+    border: 1px solid orange;
+    background-color: rgb(255, 255, 200);
+    color: orange;
+    /*min-width will be changed by JS to match the amount*/
+    min-width: 71.03448%;
+}
+.category-brakedown-limits-left {
+    border: 1px solid green;
+    border-left: 0px;
+    background-color: rgb(200, 255, 200);
+    color: green;
+    /*min-width will be changed by JS to match the amount*/
+    min-width: 28.965517%;
+}
+
+/*---------------Overlays---------------*/
 #overlays-container {
     display: flex;
     display: none;
