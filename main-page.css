@@ -183,6 +183,7 @@ The menu container is in the header and contains only the button
 /*-----Box-----*/
 .category-brakedown {
     border: 1px solid black;
+    background-color: rgb(225, 225, 225);
 }
 
 /*-----Category header-----*/
@@ -210,10 +211,10 @@ The menu container is in the header and contains only the button
 }
 
 .category-brakedown-limits-limit {
-    border: 1px solid green;
+    border: 1px solid black;
     border-bottom: 0px;
-    background-color: rgb(200, 255, 200);
-    color: green;
+    background-color: rgb(245, 245, 245);
+    color: black;
     /*min-width will be changed by JS to match the amount*/
     min-width: 100%;
 }
@@ -226,9 +227,9 @@ The menu container is in the header and contains only the button
     display: none;
 }
 .category-brakedown-limits-spent {
-    border: 1px solid orange;
-    background-color: rgb(255, 255, 200);
-    color: orange;
+    border: 1px solid black;
+    background-color: rgb(245, 245, 245);
+    color: black;
     /*min-width will be changed by JS to match the amount*/
     min-width: 71.03448%;
 }
